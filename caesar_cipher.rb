@@ -15,6 +15,7 @@ $alpha_array = alphabet.chars()
 def string_indexer (user_string)
   # string_array creates an array for a word, indexed_array will store indices
   # with respect to the alphabet
+  p user_string # PRINTING TO CHECK
   p string_array = user_string.chars() # PRINTING TO CHECK
   indexed_array = []
 
@@ -43,15 +44,23 @@ end
 def word_cipher (user_word, step)
   # scrambled_array calls scrambler and passes user_word and step
   scrambled_array = scrambler(user_word, step)
+  adjusted_array = []
   new_word_array = []
 
-  # each value in scrambled_array is calling an indexed value in $alpha_array
-  # and appending the value (a letter) to new_word_array
+# This loop is to wrap index values
   for value in scrambled_array do
+    value = value % 26
+    adjusted_array.push(value)
+    p adjusted_array #PRINT TO CHECK
+  end
+
+  # each value in adjusted_array is calling an indexed value in $alpha_array
+  # and appending the value (a letter) to new_word_array
+  for value in adjusted_array do
     new_word_array.push($alpha_array[value])
   end
   p new_word_array #PRINT TO CHECK
-  p new_word_array.join()
+  p new_word_array.join() #PRINT TO CHECK
 end
 
-word_cipher("cat", 1)
+word_cipher("cat", 0)
