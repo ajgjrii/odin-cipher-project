@@ -51,6 +51,7 @@ def word_cipher (user_word, step)
     new_word_array.push($alpha_array[value])
   end
   p new_word_array #PRINT TO CHECK
+  p new_word_array.join()
 end
 
 word_cipher("cat", 1)
