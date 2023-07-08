@@ -1,6 +1,6 @@
 # goal is to take a string, and cipher the text based on stepping the index for a
 # particular value. As an example, "hello" with an change of 2 would give "jgnnq"
-
+test_phrase = "abcd efg hi jk LMNO pQRst uvwxyZ!a BcD, ef"
 # part A is to turn the alphabet into an array. $alpha_array is a global variable
 alphabet = "abcdefghijklmnopqrstuvwxyz"
 $alpha_array = alphabet.chars()
@@ -15,8 +15,7 @@ $alpha_array = alphabet.chars()
 def string_indexer (user_string)
   # string_array creates an array for a word, indexed_array will store indices
   # with respect to the alphabet
-  user_string
-  string_array = user_string.chars()
+  p string_array = user_string.chars()
   indexed_array = []
 
   # for loop is appending indices of each letter to indexed_array
@@ -39,6 +38,7 @@ def scrambler (user_word, step)
   end
   scrambled_index
 end
+
 
 # part D is to create a cipher for individual words
 def word_cipher (user_word, step)
@@ -65,7 +65,7 @@ end
 
 
 
-test_phrase = "this is a dog"
+
 
 def caesar_cipher(phrase, step)
   phrase_array = phrase.split
@@ -77,5 +77,5 @@ def caesar_cipher(phrase, step)
   p ciphered_array.join(" ")
 end
 
-caesar_cipher(test_phrase, 1)
+
 
