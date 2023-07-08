@@ -15,15 +15,15 @@ $alpha_array = alphabet.chars()
 def string_indexer (user_string)
   # string_array creates an array for a word, indexed_array will store indices
   # with respect to the alphabet
-  p user_string # PRINTING TO CHECK
-  p string_array = user_string.chars() # PRINTING TO CHECK
+  user_string
+  string_array = user_string.chars()
   indexed_array = []
 
   # for loop is appending indices of each letter to indexed_array
   for letter in string_array do
     indexed_array.push($alpha_array.index(letter))
   end
-  p indexed_array # PRINTING TO CHECK
+  indexed_array
 end
 
 # part C is to modify the indices based on a desired value
@@ -37,7 +37,7 @@ def scrambler (user_word, step)
     adjustment = value + step
     scrambled_index.push(adjustment)
   end
-  p scrambled_index #PRINT TO CHECK
+  scrambled_index
 end
 
 # part D is to create a cipher for individual words
@@ -51,7 +51,7 @@ def word_cipher (user_word, step)
   for value in scrambled_array do
     value = value % 26
     adjusted_array.push(value)
-    p adjusted_array #PRINT TO CHECK
+    adjusted_array
   end
 
   # each value in adjusted_array is calling an indexed value in $alpha_array
@@ -59,8 +59,23 @@ def word_cipher (user_word, step)
   for value in adjusted_array do
     new_word_array.push($alpha_array[value])
   end
-  p new_word_array #PRINT TO CHECK
-  p new_word_array.join() #PRINT TO CHECK
+  new_word_array
+  new_word_array.join()
 end
 
-word_cipher("cat", 0)
+
+
+test_phrase = "this is a dog"
+
+def caesar_cipher(phrase, step)
+  phrase_array = phrase.split
+  ciphered_array = []
+
+  for word in phrase_array do
+    ciphered_array.push(word_cipher(word, step))
+  end
+  p ciphered_array.join(" ")
+end
+
+caesar_cipher(test_phrase, 1)
+
