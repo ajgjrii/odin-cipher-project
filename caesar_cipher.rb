@@ -10,6 +10,11 @@ $alpha_array = alphabet.chars()
 #alpha_array[2] # this will return value "c", which is at index 2
 #$alpha_array.index("c") #this will return 2, the index of the value "c"
 
+def new_cipher (phrase)
+  p phrase_array = phrase.chars()
+
+end
+
 
 # part B is to index a string according to indices from alpha_array
 def string_indexer (user_string)
